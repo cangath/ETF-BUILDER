@@ -6,8 +6,8 @@
 
 import streamlit as st
 import pandas as pd
-from PIL import Image
-import pandas_datareader as web
+#from PIL import Image
+#import pandas_datareader as web
 import datetime as dt
 import yfinance as yf
 
