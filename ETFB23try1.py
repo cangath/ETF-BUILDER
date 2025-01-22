@@ -70,8 +70,8 @@ st.line_chart(ETF[tickers])
 ETF['Dollar Weighted Average'] = ETF[tickers].mean(axis=1)
 
 # Display results
-st.header("Market Weighted Index")
-st.line_chart(ETF['Market Weighted Index'])
+#st.header("Market Weighted Index")
+#st.line_chart(ETF['Market Weighted Index'])
 st.header("Dollar Weighted Average")
 st.line_chart(ETF['Dollar Weighted Average'])
 st.dataframe(ETF.tail())
