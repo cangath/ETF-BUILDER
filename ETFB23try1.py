@@ -46,13 +46,13 @@ for tick in tickers:
     ETF[tick] = df['Close']
     
     # Get market cap
-    try:
-        market_cap = stock_data.info['marketCap']
-        weights[tick] = market_cap
-        total_market_cap += market_cap
-    except KeyError:
-        st.error(f"Market cap not found for {tick}. Please check the ticker symbol.")
-        weights[tick] = 0
+   # try:
+   #     market_cap = stock_data.info['marketCap']
+   #     weights[tick] = market_cap
+   #     total_market_cap += market_cap
+   # except KeyError:
+   #     st.error(f"Market cap not found for {tick}. Please check the ticker symbol.")
+   #     weights[tick] = 0
 
 # Normalize weights
 for tick in weights:
@@ -63,8 +63,8 @@ st.header("Individual Stock Prices")
 st.line_chart(ETF[tickers])
 
 # Calculate Market Weighted Index
-ETF['Weighted Sum'] = sum(ETF[tick] * weights[tick] for tick in tickers)
-ETF['Market Weighted Index'] = ETF['Weighted Sum'] / sum(weights.values())
+#ETF['Weighted Sum'] = sum(ETF[tick] * weights[tick] for tick in tickers)
+#ETF['Market Weighted Index'] = ETF['Weighted Sum'] / sum(weights.values())
 
 # Calculate Dollar-Weighted Average (similar to DOW)
 ETF['Dollar Weighted Average'] = ETF[tickers].mean(axis=1)
